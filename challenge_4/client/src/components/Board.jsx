@@ -16,7 +16,9 @@ class Board extends React.Component{
     render() {
         return (
             <table>
-                {this.generate(this.props.size).map((elem, y, arr) => <tr>{arr.map(elem => React.cloneElement(elem, {y}))}</tr>)}
+                <tbody>
+                {this.generate(this.props.size).map((elem, y, arr) => <tr>{arr.map(elem => React.cloneElement(elem, {y, handleClick: this.props.handleClick}))}</tr>)}
+                </tbody>
             </table>
         );
     }
